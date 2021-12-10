@@ -10,6 +10,7 @@ Se pretende realizar con reloj con termotro con un arduino simple.
 ## 3. LIBRERÍAS
 *
 ## 4. TAREAS
+- [ ] Probar componentes
 - [ ] Carcasa
   - [ ] Diseño de la carcasa
     - [ ] Estructurar compoenetes
