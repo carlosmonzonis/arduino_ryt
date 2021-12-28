@@ -13,12 +13,12 @@ Se pretende realizar con reloj con termotro con un arduino simple.
 - [X] Probar componentes
 - [ ] Carcasa
   - [ ] Diseño de la carcasa
-    - [ ] Estructurar compoenetes
+    - [X] Estructurar compoenetes
     - [ ] Generar sus conexiones 
   - [ ] Imprimir la carcasa
 - [ ] Software
   - [ ] Pantalla LCD
     - [ ] Mostrar la hora
     - [ ] Mostar la temperatura
-  - [ ] Sensor temperatura y humedad
-  - [ ] Reloj en tiempo real
+  - [X] Sensor temperatura y humedad
+  - [X] Reloj en tiempo real
