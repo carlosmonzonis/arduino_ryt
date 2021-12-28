@@ -2,7 +2,7 @@
 #include "Arduino.h"
 #include <RTClib.h>
 
-class reloj{
+class reloj {
   private:
     static const int pin_sda = 20, pin_scl = 21;
   public:
