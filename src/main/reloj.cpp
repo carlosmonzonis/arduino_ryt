@@ -33,11 +33,11 @@ void reloj::set_time() {
   Serial.println(String("DateTime::TIMESTAMP_FULL:\t ") + new_time.timestamp(DateTime::TIMESTAMP_FULL));
 }
 
-static DateTime reloj::get_time() {
+DateTime reloj::get_time() {
   return rtc.now();
 }
 
-static void reloj::print_time(DateTime time) {
+void reloj::print_time(DateTime time) {
   Serial.print("Current time: ");
   Serial.print(time.day() / 10);
   Serial.print(time.day() % 10);

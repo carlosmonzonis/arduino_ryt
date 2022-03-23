@@ -5,7 +5,7 @@
 class termometro{
   public:
     static const uint8_t data = 2;
-    static const uint8_t type = DHT11;
+    static const uint8_t type = DHT22;
   public:
     static void check_status();
     static void get_pins();

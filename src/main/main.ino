@@ -21,6 +21,9 @@
 #include "reloj.h"
 #include "termometro.h"
 
+// include the library code:
+#include <LiquidCrystal.h>
+
 /*
   .########..########.########.####.##....##.########..######.
   .##.....##.##.......##........##..###...##.##.......##....##
@@ -31,6 +34,8 @@
   .########..########.##.......####.##....##.########..######.
 */
 
+// initialize the library with the numbers of the interface pins
+LiquidCrystal lcd(4, 5, 6, 7, 8, 9);
 
 /*
   ..######..########.########.##.....##.########.
@@ -52,6 +57,8 @@ void setup() {
   reloj::check_status();
   reloj::set_time();
   termometro::check_status();
+  // set up the LCD's number of columns and rows:
+  lcd.begin(16, 2);
 }
 
 /**
@@ -76,7 +83,36 @@ void setup() {
 */
 
 void loop() {
-  reloj::print_time(reloj::get_time());
-  termometro::print_measurement(termometro::get_temperature(), termometro::get_humidity());
-  delay(1000);
+ //reloj::print_time(reloj::get_time());
+ //termometro::print_measurement(termometro::get_temperature(), termometro::get_humidity());
+ 
+ lcd.setCursor(0, 0);
+ lcd.print(reloj::get_time().day() / 10);
+ lcd.print(reloj::get_time().day() % 10);
+ lcd.print("/"); 
+ lcd.print(reloj::get_time().month() / 10);
+ lcd.print(reloj::get_time().month() % 10);
+ lcd.print("/");
+ lcd.print(reloj::get_time().year() % 100);
+ //lcd.print(" - ");
+ lcd.setCursor(10, 0);
+ //lcd.print("T:");
+ lcd.print(termometro::get_temperature());
+ lcd.print((char)223);
+ lcd.print("C");
+ lcd.setCursor(0, 1);
+ lcd.print(reloj::get_time().hour() / 10);
+ lcd.print(reloj::get_time().hour() % 10);
+ lcd.print(":");
+ lcd.print(reloj::get_time().minute() / 10);
+ lcd.print(reloj::get_time().minute() % 10);
+ lcd.print(":");
+ lcd.print(reloj::get_time().second() / 10);
+ lcd.print(reloj::get_time().second() % 10);
+  //lcd.print(" - ");
+ lcd.setCursor(10, 1);
+ //lcd.print("H:");
+ lcd.print(termometro::get_humidity());
+ lcd.print("%");
+ delay(1000);
 }
