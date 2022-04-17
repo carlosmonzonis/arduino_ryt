@@ -16,9 +16,9 @@ Se pretende realizar con reloj con termotro con un arduino simple.
     - [X] Estructurar compoenetes
     - [ ] Generar sus conexiones 
   - [ ] Imprimir la carcasa
-- [ ] Software
-  - [ ] Pantalla LCD
-    - [ ] Mostrar la hora
-    - [ ] Mostar la temperatura
+- [X] Software
+  - [X] Pantalla LCD
+    - [X] Mostrar la hora
+    - [X] Mostar la temperatura
   - [X] Sensor temperatura y humedad
   - [X] Reloj en tiempo real
