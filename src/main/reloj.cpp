@@ -23,7 +23,7 @@ void reloj::get_pins() {
 
 void reloj::set_time() {
   DateTime old_time = rtc.now();
-  rtc.adjust(DateTime(__DATE__, __TIME__));
+  rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   DateTime new_time = rtc.now();
 
   Serial.println("New time has been set");

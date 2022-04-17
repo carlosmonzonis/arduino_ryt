@@ -52,24 +52,29 @@ LiquidCrystal lcd(4, 5, 6, 7, 8, 9);
    Solo se tendrá que llamar una vez. Se tendra que llamar siempre que el arduino este conectado al pc.
 
 */
-void setup() {
+/*void setup() {
   Serial.begin(9600);
   reloj::check_status();
-  reloj::set_time();
   termometro::check_status();
+  
+  reloj::set_time();
+  
   // set up the LCD's number of columns and rows:
   lcd.begin(16, 2);
-}
+}*/
 
 /**
    @brief inicializador general.
    Se llamará siempre que se reinicie normalmente el aparato.
 
 */
-// void setup(){
-// reloj::check_status();
-// termometro::check_status();
-// }
+
+void setup(){
+ reloj::check_status();
+ termometro::check_status();
+  // set up the LCD's number of columns and rows:
+  lcd.begin(16, 2);
+}
 
 
 /*
@@ -83,8 +88,8 @@ void setup() {
 */
 
 void loop() {
- //reloj::print_time(reloj::get_time());
- //termometro::print_measurement(termometro::get_temperature(), termometro::get_humidity());
+ reloj::print_time(reloj::get_time());
+ termometro::print_measurement(termometro::get_temperature(), termometro::get_humidity());
  
  lcd.setCursor(0, 0);
  lcd.print(reloj::get_time().day() / 10);
